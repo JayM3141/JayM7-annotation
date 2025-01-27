@@ -1,7 +1,11 @@
-# PyTorch ecosystem (CPU versions)
-torch==1.12.0
-torchvision==0.13.0
-torchaudio==0.12.0
+To update your requirements for a CPU-only environment, you should remove the CUDA-specific versions of PyTorch, torchvision, and torchaudio, and replace them with the CPU versions. Here's how you can modify your requirements:
+
+**File: /tmp/torch-requirements.txt**
+```plaintext
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==1.12.0+cpu
+torchvision==0.13.0+cpu
+torchaudio==0.12.0+cpu
 
 # Vision and detection dependencies
 opencv-python>=4.6.0
@@ -31,3 +35,6 @@ entrypoints>=0.4
 # Detectron2 and Segment Anything (CPU versions)
 git+https://github.com/facebookresearch/detectron2.git@v0.6#egg=detectron2
 git+https://github.com/facebookresearch/segment-anything.git
+```
+
+This updated file specifies the CPU versions of the PyTorch ecosystem packages and removes the CUDA-specific links. Make sure to adjust any other dependencies as needed for your specific environment.
