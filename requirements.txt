@@ -1,22 +1,14 @@
-# Enable verbose pip output
---verbose
---no-cache-dir
-
-# PyTorch ecosystem with specific versions and hashes
+# PyTorch ecosystem with specific versions
 --extra-index-url https://download.pytorch.org/whl/cu116
-torch==1.12.0+cu116 --hash=sha256:213f7407d71eacf0cbf5c8763fd236bd432fab0a3f931092464df98e1f39be6d
-torchvision==0.13.0+cu116 --hash=sha256:7e3b3c1e06c8bde3387ea1a47dbd7c3f0c062f07d8ecd862e1557c9d4b46985
+torch==1.12.0+cu116
+torchvision==0.13.0+cu116
 torchaudio==0.12.0+cu116
 
-# Vision and detection dependencies with debug info
-opencv-python>=4.6.0  # Debug: Check OpenCV installation
-pycocotools>=2.0.4  # Debug: Check COCO tools
---verbose
-git+https://github.com/facebookresearch/detectron2.git@v0.6  # Debug: Check detectron2 build
+# Vision and detection dependencies
+opencv-python>=4.6.0
+pycocotools>=2.0.4
+git+https://github.com/facebookresearch/detectron2.git@v0.6
 git+https://github.com/facebookresearch/segment-anything.git
-
-# Debug mode for remaining installations
---log /tmp/pip_debug.log
 
 # ML and transformation libraries
 transformers
