@@ -1,18 +1,28 @@
+# Core ML dependencies
 torch>=1.12.0
 torchvision>=0.13.0
 torchaudio>=0.12.0
 transformers
 timm==0.4.12
-openai
 diffusers[torch]
+
+# Detectron2 and its dependencies
+opencv-python
+pycocotools
+git+https://github.com/facebookresearch/detectron2.git
+
+# NLP tools
+spacy>=3.7.2
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz
+nltk
+
+# Additional dependencies
+openai
 setuptools==59.5.0
 openmim
 mmcv
-spacy>=3.7.2
-en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz
 lvis
 scipy
 boto3
 jsonschema
 entrypoints
-nltk
