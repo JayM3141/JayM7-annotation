@@ -2,8 +2,8 @@
 torch>=1.12.0
 torchvision>=0.13.0
 torchaudio>=0.12.0
--f https://dl.fbaipublicfiles.com/detectron2/wheels/cu111/torch1.9/index.html
-detectron2 -f https://dl.fbaipublicfiles.com/detectron2/wheels/cu117/torch2.0/index.html
+-f https://dl.fbaipublicfiles.com/detectron2/wheels/cu117/torch2.0/index.html
+detectron2
 transformers
 timm==0.4.12
 openai
