@@ -1,8 +1,6 @@
-To update your requirements for a CPU-only environment, you should remove the CUDA-specific versions of PyTorch, torchvision, and torchaudio, and replace them with the CPU versions. Here's how you can modify your requirements:
-
-**File: /tmp/torch-requirements.txt**
-```plaintext
 --extra-index-url https://download.pytorch.org/whl/cpu
+
+# Core PyTorch libraries (CPU versions)
 torch==1.12.0+cpu
 torchvision==0.13.0+cpu
 torchaudio==0.12.0+cpu
@@ -12,13 +10,12 @@ opencv-python>=4.6.0
 pycocotools>=2.0.4
 
 # ML and transformation libraries
-transformers
+transformers==4.26.0   # Pin to a stable version
 timm==0.4.12
-diffusers[torch]
+diffusers[torch]==0.10.2  # Pin compatible version
 
 # NLP tools
 spacy>=3.7.2
-https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz
 nltk>=3.8.1
 
 # Additional dependencies
@@ -35,6 +32,7 @@ entrypoints>=0.4
 # Detectron2 and Segment Anything (CPU versions)
 git+https://github.com/facebookresearch/detectron2.git@v0.6#egg=detectron2
 git+https://github.com/facebookresearch/segment-anything.git
-```
 
-This updated file specifies the CPU versions of the PyTorch ecosystem packages and removes the CUDA-specific links. Make sure to adjust any other dependencies as needed for your specific environment.
+# Optional: Spacy model (manual installation recommended)
+# To install the Spacy model, run:
+# pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz
