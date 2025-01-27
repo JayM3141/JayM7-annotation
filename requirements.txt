@@ -7,13 +7,13 @@ torchaudio==2.0.2
 # Vision and detection dependencies
 opencv-python>=4.6.0
 pycocotools>=2.0.4
-git+https://github.com/facebookresearch/detectron2.git
+detectron2==0.6
 git+https://github.com/facebookresearch/segment-anything.git
 
 # ML and transformation libraries
-transformers>=4.31.0
+transformers
 timm==0.4.12
-diffusers[torch]>=0.15.0
+diffusers[torch]
 
 # NLP tools
 spacy>=3.7.2
