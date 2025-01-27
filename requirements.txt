@@ -1,8 +1,7 @@
-# PyTorch ecosystem with specific versions
---extra-index-url https://download.pytorch.org/whl/cu116
-torch==1.12.0+cu116
-torchvision==0.13.0+cu116
-torchaudio==0.12.0+cu116
+# PyTorch ecosystem (CPU versions)
+torch==1.12.0
+torchvision==0.13.0
+torchaudio==0.12.0
 
 # Vision and detection dependencies
 opencv-python>=4.6.0
@@ -15,7 +14,7 @@ diffusers[torch]
 
 # NLP tools
 spacy>=3.7.2
-https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz
+en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz
 nltk>=3.8.1
 
 # Additional dependencies
@@ -28,3 +27,7 @@ scipy>=1.10.1
 boto3>=1.26.137
 jsonschema>=4.17.3
 entrypoints>=0.4
+
+# Detectron2 and Segment Anything
+git+https://github.com/facebookresearch/detectron2.git@v0.6
+git+https://github.com/facebookresearch/segment-anything.git
