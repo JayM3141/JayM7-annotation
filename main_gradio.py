@@ -63,8 +63,6 @@ def process_image(image_src, options, devices, processor):
 
 processor = ImageTextTransformation(args)
 
-# ...
-
 # Create Gradio input and output components
 image_input = gr.inputs.Image(type='filepath', label="Input Image")
 image_caption_checkbox = gr.inputs.Checkbox(label="Image Caption", default=True)
