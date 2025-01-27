@@ -10,9 +10,9 @@ opencv-python>=4.6.0
 pycocotools>=2.0.4
 
 # ML and transformation libraries
-transformers==4.26.0   # Pin to a stable version
+transformers==4.26.0
 timm==0.4.12
-diffusers[torch]==0.10.2  # Pin compatible version
+diffusers[torch]==0.10.2
 
 # NLP tools
 spacy>=3.7.2
@@ -30,9 +30,6 @@ jsonschema>=4.17.3
 entrypoints>=0.4
 
 # Detectron2 and Segment Anything (CPU versions)
+# Place these after PyTorch to avoid dependency errors
 git+https://github.com/facebookresearch/detectron2.git@v0.6#egg=detectron2
 git+https://github.com/facebookresearch/segment-anything.git
-
-# Optional: Spacy model (manual installation recommended)
-# To install the Spacy model, run:
-# pip install https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz
