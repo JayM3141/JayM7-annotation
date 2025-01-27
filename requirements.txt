@@ -14,7 +14,7 @@ diffusers[torch]
 
 # NLP tools
 spacy>=3.7.2
-en_core_web_sm @ https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1.tar.gz
 nltk>=3.8.1
 
 # Additional dependencies
@@ -28,6 +28,6 @@ boto3>=1.26.137
 jsonschema>=4.17.3
 entrypoints>=0.4
 
-# Detectron2 and Segment Anything
-git+https://github.com/facebookresearch/detectron2.git@v0.6
+# Detectron2 and Segment Anything (CPU versions)
+git+https://github.com/facebookresearch/detectron2.git@v0.6#egg=detectron2
 git+https://github.com/facebookresearch/segment-anything.git
