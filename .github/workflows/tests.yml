@@ -39,6 +39,12 @@ jobs:
           grep -vE 'detectron2' requirements.txt > temp-requirements.txt
           pip install -r temp-requirements.txt
 
+      - name: Check original requirements.txt
+        run: cat requirements.txt
+
+      - name: Check temp-requirements.txt
+        run: cat temp-requirements.txt
+
       - name: Install Detectron2 Separately
         run: |
           pip install git+https://github.com/facebookresearch/detectron2.git@d1e04565d3bec8719335b88be9e9b961bf3ec464#egg=detectron2
