@@ -23,7 +23,9 @@ jobs:
       - name: Configure Git
         run: |
           git config --global credential.helper store
-          echo "https://${{ secrets.HF_TOKEN }}:x-oauth-basic@huggingface.co" > ~/.git-credentials
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          echo "machine huggingface.co login github-actions password ${{ secrets.HF_TOKEN }}" > ~/.netrc
 
       - name: Debug Environment
         run: |
