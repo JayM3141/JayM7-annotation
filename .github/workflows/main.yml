@@ -3,7 +3,7 @@ name: Sync to Hugging Face
 on:
   push:
     branches:
-      - main  # Run this workflow whenever changes are pushed to the 'main' branch
+      - main
 
 jobs:
   deploy:
@@ -17,6 +17,12 @@ jobs:
         run: |
           sudo apt-get install git-lfs
           git lfs install
+
+      - name: Configure Git
+        run: |
+          git config --global credential.helper store
+          echo "https://huggingface.co" > ~/.git-credentials
+          echo "https://${{ secrets.HF_TOKEN }}:@huggingface.co" >> ~/.git-credentials
 
       - name: Push changes to Hugging Face
         env:
