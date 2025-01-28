@@ -18,7 +18,7 @@ jobs:
           sudo apt-get install git-lfs
           git lfs install
 
-      - name: Configure Git credentials
+      - name: Set up Git credentials
         env:
           HF_TOKEN: ${{ secrets.HF_TOKEN }}
         run: |
