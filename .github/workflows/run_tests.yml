@@ -1,0 +1,15 @@
+name: Auto Fix on Failure
+on:
+  workflow_run:
+    workflows: ["Run Tests"]
+    types:
+      - completed
+
+jobs:
+  fix:
+    if: failure()
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Run Auto Fix
+        run: python auto_fix.py
