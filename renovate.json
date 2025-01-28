@@ -1,0 +1,21 @@
+{
+  "extends": ["config:base"],
+  "packageRules": [
+    {
+      "updateTypes": ["major"],
+      "automerge": false,
+      "labels": ["breaking-change"],
+      "groupName": "Major Updates",
+      "schedule": ["after 9am on monday"]  // Schedule for non-disruptive hours
+    },
+    {
+      "updateTypes": ["minor", "patch"],
+      "automerge": true,
+      "groupName": "Minor/Patch Updates",
+      "requiredStatusChecks": null
+    }
+  ],
+  "commitBody": "This PR updates the dependencies across the repository.",
+  "prHourlyLimit": 2,
+  "prConcurrentLimit": 5
+}
