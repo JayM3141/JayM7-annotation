@@ -34,5 +34,4 @@ entrypoints>=0.4
 detectron2 @ git+https://github.com/facebookresearch/detectron2.git@d1e04565d3bec8719335b88be9e9b961bf3ec464#egg=detectron2
 
 # Segment Anything (also pinned to a specific commit)
-segment-anything @ git+https://github.com/facebookresearch/segment-anything.git@b3d8f0c8b4c943bffa1ed8de1765b37b6efcaa59#egg=segment-anything
-
+segment-anything @ git+https://github.com/facebookresearch/segment-anything.git@dca509fe793f601edb92606367a655c15ac00fdf#egg=segment-anything
