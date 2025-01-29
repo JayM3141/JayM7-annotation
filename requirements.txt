@@ -10,7 +10,7 @@ opencv-python>=4.6.0
 pycocotools>=2.0.4
 
 # ML and transformation libraries
-transformers==4.26.0
+transformers==4.38.0
 timm==0.4.12
 diffusers[torch]==0.10.2
 
