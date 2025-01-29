@@ -52,9 +52,14 @@ jobs:
         run: |
           pip install --no-cache-dir -r temp-requirements.txt
 
+       - name: Debug Installed Libraries (Before Spacy Install)
+         run: |
+           python -c "import numpy; print(f'Numpy Version: {numpy.__version__}')"
+          
       - name: Install spacy Separately
         run: |
           pip install --no-build-isolation --no-cache-dir spacy==3.8.2
+         continue-on-error: true
 
       - name: Debug Installed Libraries
         run: |
