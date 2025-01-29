@@ -1,8 +1,9 @@
-name: MCP Auto-Fix
+name: Groq Auto-Fix
 on:
-  workflow_run:
-    workflows: [ "CI Tests", "Build and Deploy" ]
-    types: [ completed ]
+  issues:
+    types: [opened, edited]
+  pull_request:
+    types: [opened, synchronize]
 
 jobs:
   auto-fix:
@@ -11,6 +12,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: Run MCP GitHub Fixes
+      - name: Run MCP GitHub Fixes with Groq
         run: |
-          npx -y @modelcontextprotocol/server-github --token ${{ secrets.GITHUB_PAT }}
+          npx -y @modelcontextprotocol/server-github \
+          --llm groq \
+          --api-key groq=${{ secrets.GROQ_API_KEY }}
