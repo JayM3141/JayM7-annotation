@@ -63,10 +63,18 @@ jobs:
       - name: Install Build Dependencies
         run: |
           pip install --upgrade setuptools wheel Cython
-      
-      - name: Preinstall spacy Dependencies
+          
+      - name: Install Required Cython Dependencies
         run: |
-          pip install cymem==2.0.6 preshed==3.0.8 murmurhash==1.0.9 blis==0.7.9
+          pip install --no-cache-dir \
+            cymem==2.0.6 \
+            preshed==3.0.8 \
+            murmurhash==1.0.9 \
+            blis==0.7.9 \
+            thinc==8.1.9 \
+            numpy==1.21.6 \
+            setuptools>=59.6.0 \
+            Cython==0.29.37
       
       - name: Install spacy Separately
         run: |
@@ -76,6 +84,10 @@ jobs:
         run: |
           pip list
           python -c "import numpy; print(f'Numpy: {numpy.__version__}')"
+          
+      - name: Verify Installation
+        run: |
+          python -c "import spacy; print(spacy.__version__)"
 
       - name: Install spacy Separately
         run: |
