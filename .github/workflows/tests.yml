@@ -37,10 +37,10 @@ jobs:
       - name: Debug Installed Libraries (Before Spacy)
         run: |
           python -c "import numpy; print(f'Numpy: {numpy.__version__}')"
-
-      - name: Create Clean temp-requirements.txt
+          
+      - name: Create Clean temp-requirements.txt    
         run: |
-          grep -vE 'detectron2|spacy' requirements.txt > temp-requirements.txt
+          grep -vE 'detectron2|spacy|mmcv' requirements.txt > temp-requirements.txt
           cat temp-requirements.txt  # Debugging output
 
       - name: Install PyTorch First
