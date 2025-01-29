@@ -34,34 +34,29 @@ jobs:
         run: |
           pip install numpy==1.21.6 --force-reinstall --no-cache-dir
 
+      - name: Debug Installed Libraries (Before Spacy)
+        run: |
+          python -c "import numpy; print(f'Numpy: {numpy.__version__}')"
+
       - name: Create Clean temp-requirements.txt
         run: |
           grep -vE 'detectron2|spacy' requirements.txt > temp-requirements.txt
           cat temp-requirements.txt  # Debugging output
-          
+
       - name: Install PyTorch First
         run: |
           pip install torch==1.12.0+cpu torchvision==0.13.0+cpu torchaudio==0.12.0+cpu --extra-index-url https://download.pytorch.org/whl/cpu
 
-      - name: Prepare Dependencies File
-        run: |
-          grep -vE 'detectron2' requirements.txt > temp-requirements.txt
-          cat temp-requirements.txt  # Debugging step
-
       - name: Install Other Dependencies (Without Detectron2 and Spacy)
         run: |
           pip install --no-cache-dir -r temp-requirements.txt
-
-      - name: Debug Installed Libraries (Before Spacy Install)
-        run: |
-          python -c "import numpy; print(f'Numpy Version: {numpy.__version__}')"
 
       - name: Install spacy Separately
         run: |
           pip install --no-build-isolation --no-cache-dir spacy==3.8.2
         continue-on-error: true
 
-      - name: Debug Installed Libraries
+      - name: Debug Installed Libraries (After Spacy)
         run: |
           python -c "import numpy, spacy; print(f'Numpy: {numpy.__version__}, Spacy: {spacy.__version__}')"
 
