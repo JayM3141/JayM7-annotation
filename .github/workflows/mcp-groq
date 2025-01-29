@@ -17,3 +17,4 @@ jobs:
           npx -y @modelcontextprotocol/server-github \
           --llm groq \
           --api-key groq=${{ secrets.GROQ_API_KEY }}
+
