@@ -60,6 +60,23 @@ jobs:
         run: |
           pip install --no-cache-dir -r temp-requirements.txt
 
+      - name: Install Build Dependencies
+        run: |
+          pip install --upgrade setuptools wheel Cython
+      
+      - name: Preinstall spacy Dependencies
+        run: |
+          pip install cymem==2.0.6 preshed==3.0.8 murmurhash==1.0.9 blis==0.7.9
+      
+      - name: Install spacy Separately
+        run: |
+          pip install --no-build-isolation --no-cache-dir spacy==3.8.2
+      
+      - name: Debug Installed Libraries
+        run: |
+          pip list
+          python -c "import numpy; print(f'Numpy: {numpy.__version__}')"
+
       - name: Install spacy Separately
         run: |
           pip install --no-build-isolation --no-cache-dir spacy==3.8.2
