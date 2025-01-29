@@ -78,9 +78,9 @@ jobs:
                 
       - name: Install SpaCy Without Version Pinning
         run: |
-          pip install --no-cache-dir --no-build-isolation "spacy>=3.8,<3.9"
+          pip install --no-deps --no-cache-dir --use-pep517 --no-build-isolation "spacy>=3.8,<3.9"
           continue-on-error: true
-      
+
       - name: Debug Installed Libraries
         run: |
           pip list
